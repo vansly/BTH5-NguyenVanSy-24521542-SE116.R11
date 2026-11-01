@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PowerupDecoratorData" format=3 uid="uid://cr3r7wrk8nwqv"]
+
+[ext_resource type="Script" uid="uid://c1ovomeefmlli" path="res://scenes/powerups/magnet_ring_decorator.gd" id="1_qlfeb"]
+[ext_resource type="Script" uid="uid://bslulkxbp70v5" path="res://scripts/powerup/powerup_decorator_data.gd" id="2_4svd6"]
+
+[resource]
+script = ExtResource("2_4svd6")
+id = "magnet"
+display_name = "Nam châm phát tài"
+decorator_script = ExtResource("1_qlfeb")
+duration = 15.0
+color_modulate = Color(1, 1, 0, 1)
+metadata/_custom_type_script = "uid://bslulkxbp70v5"

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cvfpeig5r3yfc"]
+
+[ext_resource type="Script" uid="uid://dvv8phiieiyq3" path="res://scenes/powerups/shield.gd" id="1_m73dm"]
+[ext_resource type="Texture2D" uid="uid://dhb1qtkyk7it4" path="res://assets/items/shield.png" id="2_m73dm"]
+
+[node name="Shield" type="Node3D" unique_id=1152561630]
+script = ExtResource("1_m73dm")
+
+[node name="Sprite" type="Sprite3D" parent="." unique_id=791311673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+pixel_size = 0.0625
+billboard = 1
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("2_m73dm")

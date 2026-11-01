@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://vixn53k4vluy"]
+
+[ext_resource type="Script" uid="uid://d02hayd1fmqbe" path="res://scenes/powerups/orbit_blades.gd" id="1_osukp"]
+
+[node name="OrbitBlades" type="Node3D" unique_id=1369576539]
+script = ExtResource("1_osukp")
+count = 10

@@ -1,0 +1,58 @@
+# ───────────── Godot 4 ─────────────
+# Generated cache: imported assets, shader cache, editor state.
+# Godot rebuilds this folder automatically on project open.
+.godot/
+
+# Godot 4 C# / export artifacts
+*.translation
+.mono/
+data_*/
+mono_crash.*.json
+
+# Export presets can contain keystore passwords and signing credentials.
+# Remove this line only if you are sure your presets hold no secrets.
+export_presets.cfg
+
+# Export output folders (adjust to wherever you export builds)
+builds/
+export/
+
+# ───────────── Godot 3 legacy (harmless in Godot 4 projects) ─────────────
+.import/
+
+# ───────────── .NET / C# build output ─────────────
+bin/
+obj/
+*.dll
+*.pdb
+*.user
+*.userprefs
+
+# ───────────── JetBrains Rider ─────────────
+.idea/
+*.DotSettings.user
+*.sln.iml
+*.iml
+.idea_modules/
+cmake-build-*/
+
+# Rider/ReSharper caches
+_ReSharper*/
+*.resharper.user
+
+# Visual Studio leftovers, in case teammates open the project in it
+.vs/
+
+# ───────────── Godot Hub / project managers ─────────────
+# Godot Hub-style launchers keep their project lists in your user profile,
+# not in the project folder, so nothing project-local needs ignoring.
+# These cover stray files some launchers and tools drop:
+.godot-hub/
+.godothub/
+
+# ───────────── OS junk ─────────────
+.DS_Store
+Thumbs.db
+Desktop.ini
+*~
+*.swp

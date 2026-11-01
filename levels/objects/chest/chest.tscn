@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://b8refmwq8cbyr"]
+
+[ext_resource type="Texture2D" uid="uid://b4q4kkjryp034" path="res://assets/items/chest/chest_close_01.png" id="1_3srgs"]
+[ext_resource type="Script" uid="uid://bmdp8u8avxscm" path="res://levels/objects/chest/chest.gd" id="1_g2331"]
+[ext_resource type="Script" uid="uid://b2eobbyacfwr1" path="res://scripts/interactive_area_3d.gd" id="1_iyrre"]
+[ext_resource type="Texture2D" uid="uid://c3foe15vbnnl7" path="res://assets/items/chest/chest_close_02.png" id="2_aga8g"]
+[ext_resource type="Texture2D" uid="uid://ca0p0b7g147ip" path="res://assets/items/chest/chest_close_03.png" id="3_2b5gf"]
+[ext_resource type="Texture2D" uid="uid://br255de6elx6b" path="res://assets/items/chest/chest_gold_close_01.png" id="4_6qm5o"]
+[ext_resource type="Texture2D" uid="uid://bdc7p81fmyoa3" path="res://assets/items/chest/chest_gold_close_02.png" id="5_b4npe"]
+[ext_resource type="Texture2D" uid="uid://bebo1arg0yq34" path="res://assets/items/chest/chest_gold_close_03.png" id="6_uib7l"]
+[ext_resource type="Texture2D" uid="uid://dsjkhjmadcr3h" path="res://assets/items/chest/chest_gold_close_04.png" id="7_g2331"]
+[ext_resource type="Texture2D" uid="uid://ddbv3xy7q1qu1" path="res://assets/items/chest/chest_open_01.png" id="8_uib7l"]
+[ext_resource type="Texture2D" uid="uid://bxvy63ukpdk4f" path="res://assets/items/chest/chest_open_02.png" id="9_g2331"]
+[ext_resource type="Texture2D" uid="uid://bg2o8yx7ly65a" path="res://assets/items/chest/chest_open_03.png" id="10_u6qbv"]
+[ext_resource type="Texture2D" uid="uid://dx3f7mlh8ob65" path="res://assets/items/chest/chest_open_04.png" id="11_peuwf"]
+[ext_resource type="Texture2D" uid="uid://1jxmjsqy3n14" path="res://assets/items/chest/chest_open_05.png" id="12_2572a"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iyrre"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3srgs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_aga8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2b5gf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6qm5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_b4npe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uib7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_g2331")
+}],
+"loop": 0,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_uib7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_g2331")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_u6qbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_peuwf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2572a")
+}],
+"loop": 0,
+"name": &"open",
+"speed": 10.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uib7l"]
+size = Vector3(1.8, 1.4, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_uib7l"]
+radius = 1.8
+
+[node name="Chest" type="Node3D" unique_id=927842737]
+script = ExtResource("1_g2331")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1759583331]
+offset = Vector2(0, 24)
+pixel_size = 0.0625
+billboard = 1
+alpha_cut = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_iyrre")
+animation = &"open"
+frame = 4
+frame_progress = 1.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=794875986]
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=723433209]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+shape = SubResource("BoxShape3D_uib7l")
+
+[node name="InteractiveArea3D" type="Area3D" parent="." unique_id=16643567]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_iyrre")
+metadata/_custom_type_script = "uid://b2eobbyacfwr1"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractiveArea3D" unique_id=384946492]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_uib7l")
